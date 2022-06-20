@@ -40,7 +40,7 @@ try:
       streamlit.error()
 
 #Don't run anything past here
-streamlit.stop()
+#streamlit.stop()
 
 #import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
