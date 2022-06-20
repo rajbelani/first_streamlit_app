@@ -27,7 +27,7 @@ streamlit.dataframe(fruits_to_show)
 
 #create a repeatable code block
 def get_fruityvice_data(this_fruit_choice):
-    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     return fruityvice_normalized
 
@@ -61,7 +61,7 @@ if streamlit.button('Get Fruit Load List'):
 # Allow the end user to add fruit to the list
 def insert_row_snowflake(new_fruit):
     with my_cnx.cursor() as my_cur:
-         my_cur.execute("insert into fruit_load_list values ('"+"jackfruit"+"')")
+         my_cur.execute("insert into fruit_load_list values ('"+"papaya"+"')")
          return "Thanks for adding" + new_fruit
 
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
